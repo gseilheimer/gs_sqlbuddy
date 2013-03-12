@@ -1,0 +1,23 @@
+#sqlbuddy-popup {
+    background-color:#fff;
+    border-radius:15px;
+    color:#000;
+    display:none;
+    padding:20px;
+    min-width:960px;
+    min-height:600px;
+    height:auto !important;
+    height:90%;
+}
+
+#sqlbuddy-popup .b-close{
+    cursor:pointer;
+    position:absolute;
+    right:10px;
+    top:5px;
+}
+
+#sqlbuddy-popup .b-iframe {
+    height:90%;
+    width: 95%;
+}
