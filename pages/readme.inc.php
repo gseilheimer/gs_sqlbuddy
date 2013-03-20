@@ -14,45 +14,46 @@
  * @version 1.3.3
  */
 /**
- * jquery popup
- * @link http://dinbror.dk/bpopup/
+ * fancybox Lib
+ * @link http://fancybox.net/
+ * @version 1.3.4
  */
 
 // AddOn-SQLBUDDY
 
-    //////////////////////////////////////////////////////////////////////////////////
-    // CONFIG
-    //////////////////////////////////////////////////////////////////////////////////
+   //////////////////////////////////////////////////////////////////////////////////
+   // CONFIG
+   //////////////////////////////////////////////////////////////////////////////////
 
-    // VARs
-    #$mypage = "gs_sqlbuddy";
+   // VARs
+   #$page = "gs_sqlbuddy";
 
-    // GET PARAMS
-    ////////////////////////////////////////////////////////////////////////////////
-    $page 	    = rex_request('page', 'string');
-    $subpage 	= rex_request('subpage', 'string');
-    #$func    	= rex_request('func', 'string');
-    #$oid     	= rex_request('oid', 'int');
+   // GET PARAMS
+   ////////////////////////////////////////////////////////////////////////////////
+   $page       = rex_request('page', 'string');
+   $subpage    = rex_request('subpage', 'string');
+   #$func    	= rex_request('func', 'string');
+   #$oid     	= rex_request('oid', 'int');
 
-    //////////////////////////////////////////////////////////////////////////////////
-    // SUBPAGES
-    //////////////////////////////////////////////////////////////////////////////////
+   //////////////////////////////////////////////////////////////////////////////////
+   // SUBPAGES
+   //////////////////////////////////////////////////////////////////////////////////
 
 ?>
 
-    <div class="rex-addon-output">
+   <div class="rex-addon-output">
 
-        <h2 class="rex-hl2"><?php echo $I18N->msg('addon_subpage_readme_txt_01'); ?></h2>
+      <h2 class="rex-hl2"><?php echo $I18N->msg($page.'_subpage_readme_txt_01'); ?></h2>
 
-        <div class="rex-addon-content">
-            <p class="rex-code">
-                <code><span style="color: #000000">
-                <?php
-                    echo $I18N->msg('addon_subpage_readme_txt_01_01') . "<br />";
-                    echo $I18N->msg('addon_subpage_readme_txt_01_02') . "<br />";
-                    ?>
-                </span></code>
-            </p>
-        </div>
+      <div class="rex-addon-content">
+         <p class="rex-code">
+            <code><span style="color: #000000">
+                   <?php
+                  echo $I18N->msg($page.'_subpage_readme_txt_01_01') . "<br />";
+                  echo $I18N->msg($page.'_subpage_readme_txt_01_02') . "<br />";
+                  ?>
+                   </span></code>
+         </p>
+      </div>
 
-    </div>
+   </div>

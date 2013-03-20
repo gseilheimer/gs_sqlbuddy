@@ -14,146 +14,131 @@
  * @version 1.3.3
  */
 /**
- * jquery popup
- * @link http://dinbror.dk/bpopup/
+ * fancybox Lib
+ * @link http://fancybox.net/
+ * @version 1.3.4
  */
 
 // AddOn-SQLBUDDY
 
-    //////////////////////////////////////////////////////////////////////////////////
-    // CONFIG
-    //////////////////////////////////////////////////////////////////////////////////
+   //////////////////////////////////////////////////////////////////////////////////
+   // CONFIG
+   //////////////////////////////////////////////////////////////////////////////////
 
-    #$mypage = "gs_sqlbuddy";
+   // VARs
+   $page = "gs_sqlbuddy";
 
-    //////////////////////////////////////////////////////////////////////////////////
-    // SUBPAGES
-    //////////////////////////////////////////////////////////////////////////////////
+   // GET PARAMS
+   ////////////////////////////////////////////////////////////////////////////////
+   $page       = rex_request('page', 'string');
+   $subpage    = rex_request('subpage', 'string');
+   #$func    	= rex_request('func', 'string');
+   #$oid     	= rex_request('oid', 'int');
 
-    // GET PARAMS
-    ////////////////////////////////////////////////////////////////////////////////
-    $page 	    = rex_request('page', 'string');
-    $subpage 	= rex_request('subpage', 'string');
-    #$func    	= rex_request('func', 'string');
-    #$oid     	= rex_request('oid', 'int');
+   //////////////////////////////////////////////////////////////////////////////////
+   // SUBPAGES
+   //////////////////////////////////////////////////////////////////////////////////
 
-    // REX BACKEND LAYOUT TOP
-    //////////////////////////////////////////////////////////////////////////////
-    if($subpage != "sqlbuddy")
-    {
-        require $REX['INCLUDE_PATH'] . '/layout/top.php';
-    }
+   // REX BACKEND LAYOUT TOP
+   //////////////////////////////////////////////////////////////////////////////
+   if ($subpage != "sqlbuddy") {
+      require $REX['INCLUDE_PATH'] . '/layout/top.php';
+   }
 
-    echo '<div id="rex-addon-output">';
+   echo '<div id="rex-addon-output">';
 
-    // TITLE & SUBPAGE NAVIGATION
-    //////////////////////////////////////////////////////////////////////////////
-    if($subpage != "sqlbuddy")
-    {
-        rex_title($I18N->msg("addon_name"),$REX['ADDON'][$page]['SUBPAGES']);
-    }
+   // TITLE & SUBPAGE NAVIGATION
+   //////////////////////////////////////////////////////////////////////////////
+   if ($subpage != "sqlbuddy") {
+      rex_title("SQL Buddy", $REX['ADDON'][$page]['SUBPAGES']);
+   }
 
-    // JS SCRIPT FÜR LINKS IN POPUP
-    ////////////////////////////////////////////////////////////////////////////////
+   // JS SCRIPT FÜR LINKS IN POPUP
+   ////////////////////////////////////////////////////////////////////////////////
 
-    echo '
-        <script type="text/javascript">
+   echo '
+      <script type="text/javascript">
 
-            // Semicolon (;) to ensure closing of earlier scripting
-            // Encapsulation
-            // $ is assigned to jQuery
-            ;(function($) {
+         // Semicolon (;) to ensure closing of earlier scripting
+         // Encapsulation
+         // $ is assigned to jQuery
+         ;(function($)
+         {
+              // DOM Ready
+             $(function()
+             {
+                 // Binding a click event
+               $("a.fancyboxStyleInline-sqlBuddy").fancybox(
+               {
+                  "width":"95%",
+                  "height":"95%",
+                  "autoScale":false,
+                  "transitionIn":"none",
+                  "transitionOut":"none",
+                  "overlayOpacity":0.8,
+                  "overlayColor":"#000",
+                  "type":"iframe"
+               });
+               //$("start-sqlbuddy-form").submit();
+             });
+         })(jQuery);
 
-                 // DOM Ready
-                $(function()
-                {
-                    // Binding a click event
-                    // From jQuery v.1.7.0 use .on() instead of .bind()
-                    $("#run-sqlbuddy").bind("click", function(e)
-                    {
-                        // Prevents the default action to be triggered.
-                        e.preventDefault();
+      </script >';
 
-                        // Triggering bPopup when click event is fired
-                        $("#sqlbuddy-popup").bPopup
-                        ({
-                            content: "iframe",
-                            contentContainer: ".sqlbuddy-content",
-                            loadUrl: "index.php?page='.$page.'&subpage=sqlbuddy",
-                            scrollBar: true,
-                        });
-                    });
-                });
-            })(jQuery);
+   // INCLUDE REQUESTED SUBPAGE
+   //////////////////////////////////////////////////////////////////////////////
 
-        </script>';
+   if($subpage != "")
+   {
+       switch($subpage)
+       {
+           case 'readme':
+           {
+               break;
+           }
+           case 'sqlbuddy':
+           {
+               break;
+           }
+           default:
+           {
+              $subpage = "index";
+           }
+       }
+       require $REX["INCLUDE_PATH"]."/addons/$page/pages/$subpage.inc.php";
+   }
+   else
+   {
+       echo '<h2 class="rex-hl2">'.$I18N->msg($page.'_subpage_index').'</h2 >';
 
+       echo '<div class="rex-addon-content" >';
+           echo '<p class="rex-code">';
+               echo '<code ><span style = "color: #000000" > ';
 
-    echo '
-        <div id="sqlbuddy-popup">
-            <a class="b-close">x<a/>
-            <div class="sqlbuddy-content"></div>
-        </div>';
+                   echo $I18N->msg($page.'_subpage_index_txt_01') . "<br />";
+                   echo $I18N->msg($page.'_subpage_index_txt_01_01') . "<br />";
+                   echo $I18N->msg($page.'_subpage_index_txt_01_02') . "<br />";
 
+               echo '</span ></code >';
+           echo '</p >';
+       echo '</div >';
 
-    // INCLUDE REQUESTED SUBPAGE
-    //////////////////////////////////////////////////////////////////////////////
+       echo '<div class="rex-addon-output" > ';
+       echo '<div class="rex-addon-content" > ';
 
-    if($subpage != "")
-    {
-        switch($subpage)
-        {
-            case 'readme':
-            {
-                break;
-            }
-            case 'sqlbuddy':
-                #$open_header_only = true; // Den Redaxoadminheader ausblenden
-                #include $REX['INCLUDE_PATH']."/layout/top.php";
-                #rex_title(SQL-BUDDY, "&nbsp;");
-                #include $REX['INCLUDE_PATH']."/addons/$mypage/pages/sqlbuddy.inc.php";
-                #include $REX['INCLUDE_PATH']."/layout/bottom.php";
-                break;
-            default:
-            {
-                $subpage = "index";
-            }
-        }
-        require $REX["INCLUDE_PATH"]."/addons/$page/pages/$subpage.inc.php";
-    }
-    else
-    {
-        echo '<h2 class="rex-hl2">'.$I18N->msg("addon_subpage_index").'</h2>';
+       echo '<a class="fancyboxStyleInline-sqlBuddy" href="index.php?page='.$page.'&subpage=sqlbuddy"> SQL BUDDY &ouml;ffnen </a >';
 
-        echo '<div class="rex-addon-content">';
-            echo '<p class="rex-code">';
-                echo '<code><span style="color: #000000">';
+       echo '</div >';
+       echo '</div >';
+   }
 
-                    echo $I18N->msg('addon_subpage_index_txt_01') . "<br />";
-                    echo $I18N->msg('addon_subpage_index_txt_01_01') . "<br />";
-                    echo $I18N->msg('addon_subpage_index_txt_01_02') . "<br />";
+   // REX BACKEND LAYOUT BOTTOM
+   //////////////////////////////////////////////////////////////////////////////
+   echo '</div >';
 
-                echo '</span></code>';
-            echo '</p>';
-        echo '</div>';
-
-        echo '<div class="rex-addon-output">';
-        echo '<div class="rex-addon-content">';
-
-        echo '<button id="run-sqlbuddy">sqlBuddy im PopUp starten...</button>';
-        #echo '<a onclick="javascript:window.open(\'index.php?page='.$mypage.'&subpage=sqlbuddy\',\'SQL-BUDDY\',\'width=960,height=800,scrollbars=yes\');" style="cursor:pointer;">Los gehts</a>';
-
-        echo '</div>';
-        echo '</div>';
-    }
-
-    // REX BACKEND LAYOUT BOTTOM
-    //////////////////////////////////////////////////////////////////////////////
-    echo '</div>';
-
-    if($subpage != "sqlbuddy")
-    {
-        require $REX['INCLUDE_PATH'] . "/layout/bottom.php";
-    }
+   if($subpage != "sqlbuddy")
+   {
+      require $REX['INCLUDE_PATH'] . "/layout/bottom.php";
+   }
 
 ?>

@@ -14,37 +14,39 @@
  * @version 1.3.3
  */
 /**
- * jquery popup
- * @link http://dinbror.dk/bpopup/
+ * fancybox Lib
+ * @link http://fancybox.net/
+ * @version 1.3.4
  */
 
 // AddOn-SQLBUDDY
 
-//////////////////////////////////////////////////////////////////////////////////
-// CONFIG
-//////////////////////////////////////////////////////////////////////////////////
+   //////////////////////////////////////////////////////////////////////////////////
+   // SUBPAGES
+   //////////////////////////////////////////////////////////////////////////////////
+
 ?>
 
-<h3>Funktionen:</h3>
-<p>
-	Addon zum Veraendern der DB.
-</p>
+   <h3>Funktionen:</h3>
+   <p>
+      Addon zum Veraendern der DB.
+   </p>
 
-<br />
-<h3>Benutzung:</h3>
-<p>
-	Die Verbindung erfolgt ueber den hinterlegten Benutzer im REX...
-</p>
+   <br />
+   <h3>Benutzung:</h3>
+   <p>
+      Die Verbindung erfolgt ueber den hinterlegten Benutzer im REX...
+   </p>
 
-<br />
-<h3>Anpassungen:</h3>
-<p>
-	Aktuell sollten keine Anpassungen notwendig sein.
-</p>
+   <br />
+   <h3>Anpassungen:</h3>
+   <p>
+      Aktuell sollten keine Anpassungen notwendig sein.
+   </p>
 
-<br />
-<h3>Weitere Info zum Orginal:</h3>
-<p>
-	Ausfuehrliche Beschreibungen und Moeglichkeiten des Orginals finden Sie auf dessen Website:<br />
-	<a href="http://sqlbuddy.com/">Link zum Autor von SQLBuddy</a>
-</p>
+   <br />
+   <h3>Weitere Info zum Orginal:</h3>
+   <p>
+      Ausfuehrliche Beschreibungen und Moeglichkeiten des Orginals finden Sie auf dessen Website:<br />
+      <a href="http://sqlbuddy.com/">Link zum Autor von SQLBuddy</a>
+   </p>
