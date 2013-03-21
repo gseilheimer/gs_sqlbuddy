@@ -34,7 +34,7 @@
    $REX['ADDON']['name'][$page]          = 'SQL Buddy';
    $REX['ADDON']['rxid'][$page]          = '1056';
    $REX['ADDON']['page'][$page]          = $page;
-   $REX['ADDON']['version'][$page]       = '0.9.5';
+   $REX['ADDON']['version'][$page]       = '0.9.6';
    $REX['ADDON']['author'][$page]        = 'Gilbert Seilheimer';
    $REX['ADDON']['supportpage'][$page]   = 'forum.redaxo.org';
    $REX['ADDON']['perm'][$page]          = $page.'[]';
@@ -71,11 +71,13 @@
       {
          global $REX;
 
-         if( TRUE == $REX["REDAXO"] )
+         if( TRUE == $REX["REDAXO"] && $page == $REX['ADDON']['page'][$page] )
          {
+            $params['subject'] .= "\n  ".'<!-- GS:SQLBUDDY-START -->';
             $params['subject'] .= "\n  ".'<link rel="stylesheet" type="text/css" href="../files/addons/gs_fancybox/jquery.fancybox-1.3.4.css" media="screen, projection, print" />';
-            $params['subject'] .= "\n  ".'<script src="../files/addons/gs_fancybox/jquery.fancybox-1.3.4.js" type="text/javascript"></script>';
-            $params['subject'] .= "\n  ".'<script src="../files/addons/gs_fancybox/jquery.fancybox-1.3.4.pack.js" type="text/javascript"></script>';
+            $params['subject'] .= "\n  ".'<script type="text/javascript" src="../files/addons/gs_fancybox/jquery.fancybox-1.3.4.js" ></script>';
+            $params['subject'] .= "\n  ".'<script type="text/javascript" src="../files/addons/gs_fancybox/jquery.fancybox-1.3.4.pack.js"></script>';
+            $params['subject'] .= "\n  ".'<!-- GS:SQLBUDDY-ENDE -->';
          }
          return $params['subject'];
       }

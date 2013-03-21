@@ -109,27 +109,27 @@
    }
    else
    {
-       echo '<h2 class="rex-hl2">'.$I18N->msg($page.'_subpage_index').'</h2 >';
+      echo '<h2 class="rex-hl2">'.$I18N->msg($page.'_subpage_index').'</h2 >';
 
-       echo '<div class="rex-addon-content" >';
-           echo '<p class="rex-code">';
-               echo '<code ><span style = "color: #000000" > ';
+      echo '<div class="rex-addon-content" >';
+         echo '<p class="rex-code">';
+            echo '<code ><span style = "color: #000000" > ';
 
-                   echo $I18N->msg($page.'_subpage_index_txt_01') . "<br />";
-                   echo $I18N->msg($page.'_subpage_index_txt_01_01') . "<br />";
-                   echo $I18N->msg($page.'_subpage_index_txt_01_02') . "<br />";
+             echo $I18N->msg($page.'_subpage_index_txt_01') . "<br />";
+             echo $I18N->msg($page.'_subpage_index_txt_01_01') . "<br />";
+             echo $I18N->msg($page.'_subpage_index_txt_01_02') . "<br />";
 
-               echo '</span ></code >';
-           echo '</p >';
-       echo '</div >';
+            echo '</span ></code >';
+         echo '</p >';
+      echo '</div >';
 
-       echo '<div class="rex-addon-output" > ';
-       echo '<div class="rex-addon-content" > ';
+      echo '<div class="rex-addon-output" > ';
+         echo '<div class="rex-addon-content" > ';
 
-       echo '<a class="fancyboxStyleInline-sqlBuddy" href="index.php?page='.$page.'&subpage=sqlbuddy"> SQL BUDDY &ouml;ffnen </a >';
+         echo '<a class="fancyboxStyleInline-sqlBuddy" href="index.php?page='.$page.'&subpage=sqlbuddy"> SQL BUDDY &ouml;ffnen </a >';
 
-       echo '</div >';
-       echo '</div >';
+         echo '</div >';
+      echo '</div >';
    }
 
    // REX BACKEND LAYOUT BOTTOM
