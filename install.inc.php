@@ -30,9 +30,9 @@
    $page = "gs_sqlbuddy";
 
    // Installationsbedingungen pruefen
-   $page_check_rex = '4.4.1';
+   $page_check_rex = '4.5';
    $page_check_php = 5;
-   $page_check_addons = array('gs_fancybox');
+   $page_check_addons = array('gs_fancybox2');
    $page_check_status = true;
 
    //////////////////////////////////////////////////////////////////////////////////
