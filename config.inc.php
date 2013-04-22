@@ -71,7 +71,7 @@
       {
          global $REX;
 
-         if( TRUE == $REX["REDAXO"] && $page == $REX['ADDON']['page'][$page] )
+         if( TRUE == $REX["REDAXO"] )
          {
             $params['subject'] .= "\n  ".'<!-- GS:SQLBUDDY-START -->';
             $params['subject'] .= "\n  ".'<link rel="stylesheet" type="text/css" href="../files/addons/gs_fancybox2/jquery.fancybox.css" media="screen, projection, print" />';

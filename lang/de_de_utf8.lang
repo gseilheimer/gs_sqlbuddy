@@ -1,17 +1,17 @@
 ﻿# addon:gs_sqlbuddy de_de | de_de_utf8
 
-addon_name = SQL Buddy
+gs_sqlbuddy_name = SQL Buddy
 
-addon_subpage_index = Startseite
+gs_sqlbuddy_subpage_index = Startseite
 
-addon_subpage_index_txt_01 = SQL-DB-Einträge einfach ändern...
-addon_subpage_index_txt_01_01 = - Starten Sie die Anwendung mit dem Link unten
-addon_subpage_index_txt_01_02 = (Die Verbindung zum DB-Server wird automatisch hergestellt)
+gs_sqlbuddy_subpage_index_txt_01 = SQL-DB-Einträge einfach ändern...
+gs_sqlbuddy_subpage_index_txt_01_01 = - Starten Sie die Anwendung mit dem Link unten
+gs_sqlbuddy_subpage_index_txt_01_02 = (Die Verbindung zum DB-Server wird automatisch hergestellt)
 
-addon_subpage_readme = Lies mich
+gs_sqlbuddy_subpage_readme = Lies mich
 
-addon_subpage_readme_txt_01 = HINWEISE:
-addon_subpage_readme_txt_01_01 = Sie benötigen Adminrechte, damit die Anwendung geöffnet werden kann!
-addon_subpage_readme_txt_01_02 = Weitere Einstellungen sollten nicht notwendig sein.
+gs_sqlbuddy_subpage_readme_txt_01 = HINWEISE:
+gs_sqlbuddy_subpage_readme_txt_01_01 = Sie benötigen Adminrechte, damit die Anwendung geöffnet werden kann!
+gs_sqlbuddy_subpage_readme_txt_01_02 = Weitere Einstellungen sollten nicht notwendig sein.
 
-addon_subpage_sqlbuddy = SQL Buddy
+gs_sqlbuddy_subpage_sqlbuddy = SQL Buddy
