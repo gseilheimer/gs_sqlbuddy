@@ -72,7 +72,7 @@
                {
                   "width":"95%",
                   "height":"95%",
-                  "autoScale":false,
+                  "autoSize":false,
                   "transitionIn":"none",
                   "transitionOut":"none",
                   "overlayOpacity":0.8,
